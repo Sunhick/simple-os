@@ -1,0 +1,22 @@
+#Auto saved files
+*~
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Libraries
+*.lib
+*.a
+
+# Shared objects 
+*.so
+*.so.*
+
+# Executables
+*.exe
+*.out
+*.i*86
+*.x86_64

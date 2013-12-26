@@ -1,0 +1,24 @@
+
+kmain.c,204
+unsigned char *memcpy(memcpy9,235
+unsigned char *memset(memset17,481
+unsigned short *memsetw(memsetw25,591
+int strlen(32,704
+unsigned char inportb 39,802
+void outportb(47,993
+void kmain(54,1140
+
+screen.c,234
+unsigned short *textmemptr;textmemptr5,143
+int attrib 6,171
+int csr_x 7,190
+void scroll(10,242
+void move_csr(34,991
+void cls(57,1697
+void putch(79,2165
+void puts(128,3578
+void settextcolor(138,3743
+void init_video(146,4020
+
+include/system.h,23
+#define _SYSTEM_H2,18
