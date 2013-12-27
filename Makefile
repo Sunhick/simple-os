@@ -1,12 +1,25 @@
-all: boot.o kmain.o screen.o
-	ld -m elf_i386 -T boot.ld -o kernel.bin kmain.o screen.o boot.o
-boot.o: boot.asm
-	nasm -f aout -o boot.o boot.asm
-kmain.o: kmain.c include/system.h
-	gcc -m32 -Wall -O -fstrength-reduce -fomit-frame-pointer -finline-functions -nostdinc -fno-builtin -I./include -c -o kmain.o kmain.c
-screen.o: screen.c include/system.h
-	gcc -m32 -Wall -O -fstrength-reduce -fomit-frame-pointer -finline-functions -nostdinc -fno-builtin -I./include -c -o screen.o screen.c
+IDIR=./include
+CC=gcc
+CFLAGS=-m32 -Wall -O -fstrength-reduce -fomit-frame-pointer -finline-functions -nostdinc -fno-builtin -I$(IDIR)
+
+LIBS=
+ODIR=obj
+LDIR=
+
+_DEPS=string.h system.h io.h screen.h
+DEPS= $(patsubst %, $(IDIR)/%, $(_DEPS))
+
+_OBJ=string.o io.o kmain.o screen.o boot.o
+OBJ=$(patsubst %, $(ODIR)/%, $(_OBJ))
+
+all: $(OBJ)
+	ld -m elf_i386 -T boot.ld -o kernel.bin $(OBJ)
+$(ODIR)/boot.o: boot.asm
+	nasm -f aout -o $@ $^
+
+$(ODIR)/%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS) $(LIBS)
 
 .PHONY: clean
 clean:
-	rm -f *~ *.o kernel.bin
+	rm -f $(ODIR)/*.o *~ kernel.bin $(IDIR)/*~
