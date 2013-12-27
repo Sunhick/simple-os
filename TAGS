@@ -1,24 +1,55 @@
 
-kmain.c,204
-unsigned char *memcpy(memcpy9,235
-unsigned char *memset(memset17,481
-unsigned short *memsetw(memsetw25,591
-int strlen(32,704
-unsigned char inportb 39,802
-void outportb(47,993
-void kmain(54,1140
+kmain.c,19
+void kmain(11,234
 
-screen.c,234
-unsigned short *textmemptr;textmemptr5,143
-int attrib 6,171
-int csr_x 7,190
-void scroll(10,242
-void move_csr(34,991
-void cls(57,1697
-void putch(79,2165
-void puts(128,3578
-void settextcolor(138,3743
-void init_video(146,4020
+string.c,91
+unsigned char *memcpy(memcpy4,76
+unsigned char *memset(memset15,410
+int strlen(24,566
+
+screen.c,160
+unsigned char *video video7,110
+int x 8,162
+int attributes 9,204
+void clear_screen(11,228
+void move_cursor(17,337
+void putchar(22,393
+void print(44,823
+
+io.c,42
+unsigned char inb 4,40
+void outb(12,227
 
 include/system.h,23
 #define _SYSTEM_H2,18
+
+include/io.h,19
+#define _IO_H2,14
+
+include/string.h,23
+#define _STRING_H2,18
+
+include/screen.h,462
+#define _SCREEN_H2,18
+#define VGA_MEMORY 5,73
+#define SCREEN_LIMIT 8,151
+#define SCREEN_SIZE 9,180
+#define HEIGHT 12,256
+#define WIDTH 13,274
+enum color 21,532
+  black 22,545
+  blue,23,557
+  green,24,565
+  cyan,25,574
+  red,26,582
+  magenta,27,589
+  brown,28,600
+  light_grey,29,609
+  dark_grey,30,623
+  light_blue,31,636
+  light_gree,32,650
+  light_cyan,33,664
+  light_red,34,678
+  light_magenta,35,691
+  light_brown,36,708
+  white37,723

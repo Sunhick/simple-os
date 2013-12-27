@@ -23,12 +23,10 @@ unsigned char *memset(unsigned char* dest,
 
 int strlen(const char* str)
 {
-  int length = 0;
+  int i = 0;
   char *p = str;
 
-  /* determine the length  */
-  while(*p++)    length++;
-
-  return length;		       
+  while(*p++) i++;
+  return i;		       
 }
 

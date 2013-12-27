@@ -10,15 +10,21 @@
 /* kernel main */
 void kmain()
 {
-   volatile unsigned char *videoram = (unsigned char *) 0xB8000; 
+  console_init();
+  print("Welcome to Simple OS Version:0.1!\n\0");
+  print("==============================================\n\0");
+  print("VGA setup\t   ... [ok] \n\0");
 
-   int i = 0;
-   for(i = 0; i < 100; i++)     videoram[i] = 65+i;
-   
-   //videoram[1] = 0x07;
+  print("Loading virtual memory\t...[Not ok]\n\0");
   
-  //init_video();
-  // puts("video graphics are initialized\n");
+  print("Loading filesystem\t...[Not ok]\n\0");
+
+  print("Loading system call interface\t...[Not ok]\n\0");
+
+  print("Loading system\t...[Not ok]\n\0");
+
+  print("Loading modules\t...[Not ok]\n\0");
+
   /* place your code for kernel startup here */
 
   /* kernel main should never return */
