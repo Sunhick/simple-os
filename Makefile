@@ -6,10 +6,10 @@ LIBS=
 ODIR=obj
 LDIR=
 
-_DEPS=string.h system.h io.h screen.h
+_DEPS=string.h system.h io.h screen.h vmemory.h
 DEPS= $(patsubst %, $(IDIR)/%, $(_DEPS))
 
-_OBJ=string.o io.o kmain.o screen.o boot.o
+_OBJ=string.o io.o kmain.o screen.o boot.o vmemory.o
 OBJ=$(patsubst %, $(ODIR)/%, $(_OBJ))
 
 all: $(OBJ)

@@ -2,6 +2,7 @@
 #include <string.h>
 #include <io.h>
 #include <screen.h>
+#include <stdarg.h>
 
 /* get access to vga location */
 unsigned char *video = (unsigned char *)VGA_MEMORY;
@@ -16,12 +17,46 @@ void console_init(void)
 
 void move_cursor(void)
 {
-  /* code to move cursor */
+  unsigned int pos = (y * WIDTH + x) << 1;
+  
+  cli();
+  /* send command to the control indicating we will be
+     sending the high nibble first*/
+  outb(0x3d4, 14);
+  outb(0x3d4, pos >> 9);
+  /* send the lower nibble */
+  outb(0x3d4, 15);
+  outb(0x3d4, pos >> 1);
+  sti();
+}
+
+/* Scroll up the contents by n lines */
+/* Fix: Scroll isn't working correctly*/
+void scroll_up(unsigned int lines)
+{
+  /* move contents at offset to the origin of the screen */
+  unsigned char *v, *offset;
+  for(v = video; v < (unsigned char *)SCREEN_LIMIT; v += 2) {
+    offset =  (unsigned char *)(v  + lines + (WIDTH << 1));
+
+    if(offset < (unsigned char *)SCREEN_LIMIT)  {
+      *v = *offset;
+      *(v + 1) = *(offset + 1);
+    } else {
+      *offset = 0;
+      *(offset + 1) = attributes;
+    }
+  }
+  
+  y -= lines;
+  if(y < 0) y = 0;
 }
 
 void putchar(char c)
 {
-  unsigned char *v =(unsigned char *)(video + (y * 160) + (2 * x));
+  /* each character takes 2 bytes(16bits) */
+  unsigned char *v =(unsigned char *)(video + ((y * WIDTH + x) << 1));
+  
   /* handle the special chars like \n, \b , \t etc... */
   if(c == '\n') {
     x = 0;
@@ -42,9 +77,8 @@ void putchar(char c)
     }
   }
 
-  if(y >= HEIGHT)  {
-    /* do scroll  */
-  }
+  if(y >= HEIGHT)  scroll_up(y - HEIGHT);
+  move_cursor();
 }
 
 void print(char *s)
@@ -53,4 +87,40 @@ void print(char *s)
   while((c = *s++)) {
     putchar(c);
   }
+}
+
+/* Fix this method */
+/* puts the string on the screen after evaluating the format specifier */
+void printf(const char *s, ...)
+{
+  /* va_list ap; */
+  /* va_start(ap, s); */
+
+  /* unsigned char c; */
+  /* char buflim[16]; */
+  /* int val; */
+  
+  /* while((c = *s++))  { */
+  /*   if(c == 0)break; */
+  /*   else if(c == '%') { */
+  /*     c = *s++; */
+  /*     switch(c)  { */
+  /*     case 's': */
+  /* 	print((char *)va_arg(ap, int)); */
+  /* 	break; */
+  /*     case 'u': */
+  /* 	break; */
+  /*     case 'd': */
+  /* 	val = va_arg(ap, int); */
+  /* 	itoa(buflim, val, 10); 	/\* base 10 *\/ */
+  /* 	print(buflim); */
+  /* 	break; */
+  /*     case 'x': */
+  /*     case 'X': */
+  /* 	break; */
+  /*     case 'p': */
+  /* 	break; */
+  /*     } */
+  /*   } else putchar(c); */
+  /* } */
 }

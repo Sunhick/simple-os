@@ -8,6 +8,7 @@
 
 	global start
 start:
+	push ebx		;pointer to multiboot info structure
 	mov esp, system_stack 	;setup a new stack
 	jmp post_header		;jump post the multi-boot header
 
@@ -36,12 +37,14 @@ mboot:
 	dd end
 	dd start
 
+	extern kmain
+
 ;jump to kmain	
 post_header:
-	extern kmain
 	call kmain		;call kernel main
 	
-	jmp post_header		;to be replaced with call kmain
+hangup:				;kmain should never return;
+	jmp hangup
 
 	SECTION .bss
 	resb 8192 		;reserve 8K bytes. Note: stack grows downwards
