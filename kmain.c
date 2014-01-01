@@ -17,10 +17,11 @@ void kmain(struct multiboot_info *boot_info)
 
   /* Fix: printf function by defining for va_list, va_start, va_end, va_arg */
   /*  All strings needs to be terminated with '\0' */
-  print("Welcome to Simple OS!\t\0");
-  char b[10];
-  itoa(b, 1, 10);
-  print("version:\0");print(b);print("\n\0");
+  /* print("Welcome to Simple OS!\t\0"); */
+  /* char b[10]; */
+  /* itoa(b, 1, 10); */
+  /* print("version:\0");print(b);print("\n\0"); */
+  printf("version: %d - %d by %s\n\0", 4, 0, "sunil\0");
   print("==============================================\n\0");
   print("VGA setup\t   ... [ok] \n\0");
 

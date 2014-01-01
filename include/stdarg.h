@@ -1,12 +1,14 @@
 #ifndef _STDARG_H
 #define _STDARG_H
 
-/* typedef __builtin_va_list va_list;
+#include <types.h>
 
-#define va_start(a,b)  __builtin_va_start(a,b)
-#define va_end(a)      __builtin_va_end(a)
-#define va_arg(a,b)    __builtin_va_arg(a,b)
-#define __va_copy(d,s) __builtin_va_copy((d),(s))
+typedef void * va_list;
 
-*/
+#define va_start(list, param) list = (char *)&param + sizeof (param);	
+
+#define va_arg(list, type) *(type *)((char *)(list = (char *)list + sizeof(type)) - sizeof(type));
+
+#define va_end(list) //list = (void *)0;
+
 #endif

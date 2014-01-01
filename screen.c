@@ -93,34 +93,38 @@ void print(char *s)
 /* puts the string on the screen after evaluating the format specifier */
 void printf(const char *s, ...)
 {
-  /* va_list ap; */
-  /* va_start(ap, s); */
+  va_list ap;
+  va_start(ap, s);
 
-  /* unsigned char c; */
-  /* char buflim[16]; */
-  /* int val; */
+  unsigned char c;
+  char buflim[16];
+  int val;
+  char *tmp;
   
-  /* while((c = *s++))  { */
-  /*   if(c == 0)break; */
-  /*   else if(c == '%') { */
-  /*     c = *s++; */
-  /*     switch(c)  { */
-  /*     case 's': */
-  /* 	print((char *)va_arg(ap, int)); */
-  /* 	break; */
-  /*     case 'u': */
-  /* 	break; */
-  /*     case 'd': */
-  /* 	val = va_arg(ap, int); */
-  /* 	itoa(buflim, val, 10); 	/\* base 10 *\/ */
-  /* 	print(buflim); */
-  /* 	break; */
-  /*     case 'x': */
-  /*     case 'X': */
-  /* 	break; */
-  /*     case 'p': */
-  /* 	break; */
-  /*     } */
-  /*   } else putchar(c); */
-  /* } */
+  while((c = *s++))  {
+    if(c == 0)break;
+    else if(c == '%') {
+      c = *s++;
+      switch(c)  {
+      case 's':
+	tmp  = va_arg(ap, char *);
+  	print(tmp);
+  	break;
+      case 'u':
+  	break;
+      case 'd':
+  	val = va_arg(ap, int);
+  	itoa(buflim, val, 10); 	/* base 10 */
+  	print(buflim);
+  	break;
+      case 'x':
+      case 'X':
+  	break;
+      case 'p':
+  	break;
+      }
+    } else putchar(c);
+  }
+  /* clean up */
+  va_end(list);
 }
