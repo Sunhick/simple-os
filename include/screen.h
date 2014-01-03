@@ -4,9 +4,10 @@
 /* video is memory mapped to ram */
 #define VGA_MEMORY 0xB8000
 
-/* Screen size = ram memory + (height * width) */
-#define SCREEN_LIMIT 0xB87D0
-#define SCREEN_SIZE 0x07D0
+/* Screen end = ram memory + (height * width * 2) */
+#define SCREEN_LIMIT 0xB8FA0
+/* Screen size = height * width * 2 */
+#define SCREEN_SIZE 0xFA0
 
 /* width and height of the screen 80x25 wide */
 #define HEIGHT 25

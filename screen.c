@@ -17,16 +17,16 @@ void console_init(void)
 
 void move_cursor(void)
 {
-  unsigned int pos = (y * WIDTH + x) << 1;
-  
+  unsigned long pos = (y * WIDTH + x) << 1;
+
   cli();
   /* send command to the control indicating we will be
      sending the high nibble first*/
   outb(0x3d4, 14);
-  outb(0x3d4, pos >> 9);
+  outb(0x3d5, (pos >> 9) & 0xff);
   /* send the lower nibble */
   outb(0x3d4, 15);
-  outb(0x3d4, pos >> 1);
+  outb(0x3d5, (pos >> 1) & 0xff);
   sti();
 }
 
@@ -55,7 +55,7 @@ void scroll_up(unsigned int lines)
 void putchar(char c)
 {
   /* each character takes 2 bytes(16bits) */
-  unsigned char *v =(unsigned char *)(video + ((y * WIDTH + x) << 1));
+  unsigned char *v = (unsigned char *)(video + ((y * WIDTH + x) << 1));
   
   /* handle the special chars like \n, \b , \t etc... */
   if(c == '\n') {
@@ -96,9 +96,10 @@ void printf(const char *s, ...)
   va_list ap;
   va_start(ap, s);
 
+  unsigned int uval;
   unsigned char c;
   char buflim[16];
-  int val;
+  int val, buflen;
   char *tmp;
   
   while((c = *s++))  {
@@ -111,6 +112,10 @@ void printf(const char *s, ...)
   	print(tmp);
   	break;
       case 'u':
+	uval = va_arg(ap, int);
+	itoa(buflim, uval, 10);
+	buflen = strlen(buflim);
+	print(buflim);
   	break;
       case 'd':
   	val = va_arg(ap, int);

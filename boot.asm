@@ -8,7 +8,6 @@
 
 	global start
 start:
-	push ebx		;pointer to multiboot info structure
 	mov esp, system_stack 	;setup a new stack
 	jmp post_header		;jump post the multi-boot header
 
@@ -41,6 +40,7 @@ mboot:
 
 ;jump to kmain	
 post_header:
+	push ebx		;pointer to multiboot info structure
 	call kmain		;call kernel main
 	
 hangup:				;kmain should never return;
