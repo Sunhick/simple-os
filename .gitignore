@@ -1,6 +1,14 @@
 #Auto saved files
 *~
 
+#ignore isodir
+iso/isodir
+kernel.bin
+kernel.iso
+
+#kernel binary
+*.bin
+
 # Object files
 *.o
 *.ko
