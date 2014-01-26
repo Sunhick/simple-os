@@ -1,9 +1,8 @@
 
-isodir/boot/kernel.bin,30
-<ut<dupë>{‹‰$è$12,1837
-
-kmain.c,19
-void kmain(15,315
+kmain.c,74
+void start_terminal(16,333
+void keyboard_init(21,388
+void kmain(27,455
 
 boot.asm,131
 start:start10,199
@@ -11,152 +10,6 @@ mboot:mboot28,992
 post_header:post_header42,1183
 hangup:hangup46,1277
 system_stack:system_stack51,1403
-
-.git/objects/de/30c72186f58764ddae1d7e26c5da981e0de76a,240
-x¥R±NÅ0dîWDêRªŠ'1ÀÀŒÄÂôX˜ªÔq©õZ§JÜOš¥²0æ|¾;ÛizÛ¨»ûÛ«œZ6Øªúüz~y|®Ÿ²<<‰ñ’Ju4ñ¨ò”á‡ c5±§7F£ ÓN•0~	jĞK¥À²—´Á;¨±„êÄrıp¬ëQ~×İ›Íºÿ[ĞwÖILßÿ#¹ÄöâzäbmİA€æ ƒy³™®apk™-e'9¤VÉÚ—ypˆûE9è}‘8Œ“@·%‰Ùá'Ç'”r7^{”ğÀöÖ%ìÖ:Œxš¹xš1,0
-
-.git/objects/38/22503d5ddeec97b10ccd46cdb665c9b0ff731c,140
-xÍ‘¿NÄ0ÆY›§ğ|’{:*êÀÂ1 !&”¦î]Dâœòg`Dâœòg1,0
-xÍ‘¿NÄ0ÆY›§ğ|’{:*êÀÂ1 !&”¦î]Dâœòg`áÙqÛôx–8²ïûÅ\à®;ÜhçzBÈm€O¯-KL&ÉE5nôE5n1,0
-
-.git/objects/6c/8ce38f0c690e2657586beb480e548bb9586b69,53
-xKÊÉOR047xKÊÉOR041,0
-xKÊÉOR047fÈÍNÉ,RĞ-PÈP1,0
-
-.git/objects/3c/3da545615f7cd443ffd5820a63fb66099f44f4,37
-x+)JMU0±4`040031QJMU0±4`0400311,0
-
-.git/objects/f5/5bf24b7fcc4c1cb12184a5e9ee30e6d4ea3a41,11
-x5x1,0
-
-.git/objects/51/d7a6cf694016b725169e17262036e394dabf22,240
-xmTmOÛ0Ş×øWÜÇMƒª…	1Â¦¥/”Š¾ Újš¦©râkjš¦©râ1,0
-xmTmOÛ0Ş×øWÜÇMƒª…	1Â¦¥/”Š¾ Újš¦©râkkHìb;”Nûñ»Øe„©RÕÄÎswÏù¹Çi®Sh¿‹gki~Ğ(Ì•3;Øh©è%¸5Bªµƒ\s¦ÁâïW€’>ÈÖZ[§AhJRZ\–9XW.— Xtå†–<{`q•V‚òĞ>ÚãŒ’é*Hw`K%s¸ôT}Ëå62]|eûÙÌeûÙ1,0
-
-.git/objects/99/d4b1d0e72846527edb91ecc96f3c1f513f7195,40
-xUOxU1,0
-xUO]‚0íµıŠBlö¡Blö1,0
-
-.git/objects/bd/f709a645505157956cdb21116bc64cff474083,29
-xm’Ánƒ0†w%Oai—hOai—1,0
-
-.git/objects/10/f8c97ec91fae896686bf4fe7259e8cea1f0213,66
-x+)JMU05²`040031QJMU05²`0400311,0
-|{¶æ!«ÉIaPŠY—s~jŠijŠ2,170
-
-.git/objects/f6/4c8174d3c8173ad7b0f6e9bc95671c4f74d51d,504
-xíx1,0
-xíV]lU¾3Ò)»Ì²è–01C¢!4Õ4†’’°BÂoBÂo1,0
-İ™B”ùü¡€›™*…™‚f/›*•Æ«•‰«YY3Æ"8	“!éıU¨ZL0îÊm*_"´ ıˆ™µ`À¼4j×Êù‚	_Å>I±q–g`†í‚#ç¯}àïcáæ«YİâVC¹¯?û |×ß¹í%9?7#Êù\f=çOó,;¡“ÌFÎ(ğF‘woí»àVıÄ%ïá×OP~ğ8jv1uŸ]HÖì<jªinzjªin7,702
-İ™B”ùü¡€›™*…™‚f/›*•Æ«•‰«YY3Æ"8	“!éıU¨ZL0îÊm*_"´ ıˆ™µ`À¼4j×Êù‚	_Å>I±q–g`†í‚#ç¯}àïcáæ«YİâVC¹¯?û |×ß¹í%9?7#Êù\f=çOó,;¡“ÌFÎ(ğF‘woí»àVıÄ%ïá×OP~ğ8jv1uŸ]HÖì<jªinzá¿,`4L×élhªMŒQÑtQÎÊ\èıÑ_îB.´)Ã»™Ÿá†)‚qkË3B¸qkË3B7,702
-
-.git/objects/b8/fda65b62a668700b00dc338bbde80f23658940,167
-x+)JMU015f040031QĞKJMU015f040031QĞ1,0
-x+)JMU015f040031QĞKÏ,ÉLÏË/JeøıÉ»şŒÌFÅ–¥/ß<»òÊÊªÊ71;5-3'•!:ßbıYÛ-¼Æ'U½}¦X›ĞUâèÌ ¯â¸1–/èB‰İŸ-æ©–;÷®°ÿ•OÊÏ/ÑK,K1,0
-
-.git/objects/d8/1ebfd8b4b8dcf3f87b712a0ec12186dc8ef675,59
-xm‘»NÄ0EIkíGX¢‰µÄ¯85ÕÒPE»!‰ÅŞWå_g6YWå_g6Y1,0
-
-.git/objects/a0/8424c26a654f3b2db6e070fc5b50356dcc0f39,43
-xVıoGí¯ğWŒTU¾jƒ›&i0–ªÔ-Õ­”XıPXı1,0
-
-.git/objects/6b/2eecc7eb9b2faee42da02a1df12958831a8110,11
-x5x1,0
-
-.git/objects/34/c2c27eac638d959f200cfa17c88435373d6bc3,66
-x+)JMU05²`040031QJMU05²`0400311,0
-|{¶æ!«ÉIaPŠY—s~jŠijŠ2,170
-
-.git/objects/d0/3a94f1aa1f433c4e2b1259d1e39cdbf764f6cf,207
-x}SMoÓ@åìSMoÓ@å1,0
-Ñ§&B8™Úiy­*€¤l|sõ·O<C¸¾HğĞ£ØVÛ™µd›¨œ…’Ş&STşŸ7¬ø=²n®Á£DÑÁ.é¨jçh†%UÃ‡gz¤>é¹×ë»õ»;8ÄØ½ßlÇãºµií|p½9oÎ$LYéÆé‘†>S¨xVIjŞ†<Õğ+=ÈhĞ8éZ¹ß›K(È´;b©\ÆR×R×2,105
-
-.git/objects/5c/2a0a4e3f8cc7c8a4b74308bc0706679741abe8,9
-xx1,0
-
-.git/objects/2f/607638049b262002ec68f0a91fb5af0c055a2d,31
-xu”Ûnâ0†÷–<ÅH«9@H«9@1,0
-
-.git/objects/f0/a90ebbc277e4a6de9b695ee8f63b320a8dc87a,265
-x+)JMU0±4`040031QJMU0±4`0400311,0
-x+)JMU0±4`040031QĞKÏ,ÉLÏË/JeÈÖ{süõlıuOthÉ~ÔŒh–j€ªòMÌNMËÌIeˆÑâò³ï9~bÉvg=ìléÓW¿€ª	rutñuÕËMa±“_Òkqécw^Ñ}•âÿ—êvC…8º3È«8nŒåºPb÷g‹yªåÎ½+ì¿@å“òóKô‹sş_¿Ø%ÂÕö™°aMŒBß­yÈjrR”bÖåœŸšbšøù.FÏ}éú›d\L€@!3/9§4%•±wñ’wñ1,0
-
-.git/objects/ef/7e7efc09c9d471c391f05b9567966928085840,258
-sü:-@Fşgü^ÔgˆeªŒÛz<Ú÷oêwoê13,3508
-äA¢Å|d5Q.vU9vU20,6496
-1i¹õç“OwÎº µÀŒ:¨ß|8Ø¿8üå`WO2Íù§Á¼ı“ó­öêãƒ}èİ;û\Ÿœır¸o>œœîÂş3~&ììL£œ‡q·”›Ë#œ¢FGå8¿G°hĞÁ/ÒOÇGâÄÙÁ¿b­Ò’z¬%ï§³3z Õ¯‡&éuŠQ‡bìú¾èã3*vR<yøAbAR~İì—ƒÏç^²M|îUvïİUvï42,12509
-
-.git/objects/d1/ab39ac53c72281461df8ca03331119cd640f00,9
-xx1,0
-
-.git/objects/22/5cae6ccf9564356fc3e7ba0149be672fb21c44,35
-xKÊÉOR026dğ	‰wóòuwóòu1,0
-
-.git/objects/22/f43a5758fa7127e6155609efc69f1d53d7c8dc,1259
-x´ºx´1,0
-êÿ§ê!0 šAnp]Z°°Û§§z}ğ¤+œø‘Œ˜ÀŒÿ'°Gğà1áwâ€'Lö_~×–=¼Û-p‡sEÜ2Ú¿ì‚í»·rbÇì_NåòzF°‰gÆÓ¬ÀşEîj0F0 u¾¸Âo\ti¨q¶7üA Œ€®ç¼E è‡÷<„³îøïøküGce‚ñÀé‡cèêwE¹ƒà+ËÉA 8Ğã;µ-# tÏjÿ»ü9tÏjÿ»ü7,2043
-êÿ§ê!0 šAnp]Z°°Û§§z}ğ¤+œø‘Œ˜ÀŒÿ'°Gğà1áwâ€'Lö_~×–=¼Û-p‡sEÜ2Ú¿ì‚í»·rbÇì_NåòzF°‰gÆÓ¬ÀşEîj0F0 u¾¸Âo\ti¨q¶7üA Œ€®ç¼E è‡÷<„³îøïøküGce‚ñÀé‡cèêwE¹ƒà+ËÉA 8Ğã;µ-# tÏjÿ»ü9T³å¹7Bh°@ ,T`÷¶>K/@@7,2043
-±²°ÒxÙTéÏ7“ à«ó£ÓDµPvIÚTô:—uqæİ*â&ÉşÄW—3UFEsC_wÂ·H^II15,3692
-±²°ÒxÙTéÏ7“ à«ó£ÓDµPvIÚTô:—uqæİ*â&ÉşÄW—3UFEsC_wÂ·H^Iƒ–¨\m=&^©‡&aIeãÇ;İÀîk|^–EŞİEŞ15,3692
-:d¹$•yS1ÁÆæFê­b®ĞŒ\L¯>%<ëÓPÆQLÔ“¡Ï%+²c	äÛËèÜ,2DÕ®Zl¯^€Œa³â)’ñPŠÀ¥÷Q´ÓQJ5	b{ÿÁ#òÉ¬©öñ¬ºÆ÷¨ ¬v;T1ë‹¼vÀñ%ıBÁÚY/í|®ÄÑÓ||¢îç]ùŠ,_'K?È/Ï‘ËƒºXäå·³„Ãk—˜ßG—rÍŠ‘Ú)şéqHL¨ëïæ•É'‚Wïµ~cºû1ô¿©$´…åÙYóƒ>ïÊNìüCò†Üú:î½â®ñZÖß×‡¬–Ç[N1‚,¤ïgæy9ÓØèjf²êZ§«)"yq°™û‡|taÖZæôŸª/ğ‹QÑ[¼GÀ‡”kõåXNë£İCöí'67’xb®X;‡‚Üyî·«›×“l_	ô&×—`D­o°Ö}«èxkk'„¿dÿ¦/U¬ï’%,GëVÜ‘9©)ÒÛŸß¹¥<7 DC¨6üÀUpY=‘üM’ûîÁDÿÒæŠ²W£¡æj¼¯¨È€Ta—ı£±•ŠCB|š´„Yiıšvä†mZ.1Â{h+;uy¶›Êår)»W´‚e‰Y,ùæeFÒÊƒMq\’âÎ½£ŠYD$]L5q$ªz”¼‡…›¢ÌKGbÇ±Ò±ì˜Q'Ô2y$*ãdm±Ï‰ëÑX77ÔQ¤¤\Éİ]Ïö¤¡¡òE§C–OïõD¢ FÌ³{È³.ì˜çå£¨¢-WZã¹± •éûÌÒI€sßêw8)-'îñ0uu16,4155
-
-.git/objects/15/4dc5d817de72a5540832e0d38a298627aaeaa3,106
-x…Vio7íWéWx…Vio7íWé1,0
-KQKQ2,37
-KQá]RXru ğïrw%ù@ù 9œ™÷æÍĞYn3:óşü«¯µ‘y5WtáöÎy5Wtáö2,37
-
-.git/objects/56/0ea8591c3ccadfd6b2286f1a3f0d59ec48ce27,66
-x+)JMU0±4`040031QJMU0±4`0400311,0
-|{¶æ!«ÉIaPŠY—s~jŠijŠ2,170
-
-.git/objects/32/e5e261f312130d0958a99a54d6cd798184f694,66
-x+)JMU0±4`040031QJMU0±4`0400311,0
-|{¶æ!«ÉIaPŠY—s~jŠijŠ2,170
-
-.git/objects/29/a665c53368fc0d88230fe8b03446ea3d89940b,37
-x+)JMU0±4`040031QJMU0±4`0400311,0
-
-.git/objects/ba/047b4d1851781cc1d8669ce950b3beaabb4dc6,102
-xmİŠÃ …÷¶>ÅÁ0!´ËŞìO¡¯L´!Õ`47%ï^Ç@—…z3ÇñÌñ›ntŞ?š·½±ı•Æ·q‡áÌØ±òZ*\½»!“ó¡:²hgókµB?HcH1,0
-
-.git/objects/ba/4756d060acd3ee8d9ebfc61b35adaad9dc67f6,175
-x­WÛnÜ6íkıèîÚë[êp¤ÍC/°ö!®D¯K¢JRŞÒôÛ{fHÉZ'EóPkìJ$gæÌÌ9ÃEittğôû¯¾1uV¶¹¦g¾óAW{Åó­­ımº.´×”ëSk²­£ ×¡±¦ÚÍåÁBe·KgÛ:'…Ïu:şÜ¢m¢Ì–ÖyšªœY´AûÙ\Ö­åGYë¼uXg]nj…nj1,0
-
-.git/objects/fe/7a80300400bd323122775faec17698299d7da0,17
-x•SMox•SM1,0
-
-.git/objects/ea/d915fa580bd019d0ee57f840b856a3f2c51174,37
-x+)JMU0±4`040031QJMU0±4`0400311,0
-
-.git/description,24
-Unnamed repository;1,0
-
-.git/logs/HEAD,136
-0000000000000000000000000000000000000000 33f832c21db429bc8481ca3cd39be5d2a4d41df8 sunil <Sunilbn@live.com> 1388092649 +0530	commit 1,0
-
-.git/logs/refs/heads/master,136
-0000000000000000000000000000000000000000 33f832c21db429bc8481ca3cd39be5d2a4d41df8 sunil <Sunilbn@live.com> 1388092649 +0530	commit 1,0
-
-.git/index,11
-ÊQQ6,186
-
-.git/config,30
-	repositoryformatversion 2,7
-
-.git/hooks/pre-push.sample,15
-remote=22,770
-
-.git/hooks/prepare-commit-msg.sample,16
-  merge,24,859
-
-.git/hooks/update.sample,78
-refname=28,930
-allowunannotated=46,1316
-zero=63,1897
-	newrev_type=65,1978
-
-.git/hooks/pre-rebase.sample,16
-publish=18,587
 
 string.c,180
 unsigned char *memcpy(memcpy4,76
@@ -167,50 +20,65 @@ int strcmp(40,811
 void itoa(49,967
 void reverse(62,1240
 
-time.c,37
-struct time get_current_time(18,511
+time.c,35
+struct time get_current_time(5,36
 
-screen.c,207
-unsigned char *video video8,130
-int x 9,182
-int attributes 10,224
-void console_init(12,248
-void move_cursor(18,357
-void scroll_up(35,760
-void putchar(55,1226
-void print(84,1851
-void printf(94,2033
+screen.c,228
+unsigned short *video video8,130
+unsigned char x 9,184
+unsigned char attributes 10,236
+void console_init(12,299
+void move_cursor(25,644
+void scroll_up(41,981
+void putchar(57,1382
+void print(87,2009
+void printf(97,2191
+
+isr.c,23
+void isr_handler(4,78
 
 io.c,42
 unsigned char inb 4,40
 void outb(12,227
 
-boot.ld,85
-OUTPUT_FORMAT(1,0
-ENTRY(start)2,24
-.data data13,125
-.bss bss19,174
-end 25,220
-
-TAGS,953
-isodir/boot/kernel.bin,bin2,2
-<ut<dupë>{‹‰$è$$è$3,28
-kmain.c,c5,60
-x+)JMU0±4`040031QĞKÏ,ÉLÏË/JeÈÖ{süõlıuOthÉ~ÔŒh–j€ªòMÌNMËÌIeˆÑâò³ï9~bÉvg=ìléÓW¿€ª	rutñuÕËMa±“_Òkqécw^Ñ}•âÿ—êvC…8º3È«8nŒåºPb÷g‹yªåÎ½+ì¿@å“òóKô‹sş_¿Ø%ÂÕö™°aMŒBß­yÈjrR”bÖåœŸšbšøù.FÏ}éú›d\L€@!3/9§4%•±wñ’wñ82,3372
-.git/objects/ef/7e7efc09c9d471c391f05b9567966928085840,e7efc09c9d471c391f05b956796692808584084,3602
-sü:-@Fşgü^ÔgˆeªŒÛz<Ú÷oêwoêoêwo85,3661
-äA¢Å|d5Q.vU9vUvU9v86,3698
-1i¹õç“OwÎº µÀŒ:¨ß|8Ø¿8üå`WO2Íù§Á¼ı“ó­öêãƒ}èİ;û\Ÿœır¸o>œœîÂş3~&ììL£œ‡q·”›Ë#œ¢FGå8¿G°hĞÁ/ÒOÇGâÄÙÁ¿b­Ò’z¬%ï§³3z Õ¯‡&éuŠQ‡bìú¾èã3*vR<yøAbAR~İì—ƒÏç^²M|îUvïİUvUvïİU87,3725
-.git/objects/d1/ab39ac53c72281461df8ca03331119cd640f00,ab39ac53c72281461df8ca03331119cd640f0089,3921
-xxx90,3978
-.git/objects/22/5cae6ccf9564356fc3e7ba0149be672fb21c44,cae6ccf9564356fc3e7ba0149be672fb21c4492,3989
-xKÊÉOR026dğ	‰wóòuwóòu93,4047
-
-Makefile,10
-IDIR=1,0
-
-README.md,17
-simple-osos1,0
+gdt.asm,828
+flush_gdt:flush_gdt2,19
+flush:flush14,154
+flush_idt:flush_idt18,187
+ISR_NOERRCODE 41,553
+ISR_NOERRCODE 42,569
+ISR_NOERRCODE 43,585
+ISR_NOERRCODE 44,601
+ISR_NOERRCODE 45,617
+ISR_NOERRCODE 46,633
+ISR_NOERRCODE 47,649
+ISR_NOERRCODE 48,665
+ISR_ERRCODE 49,681
+ISR_NOERRCODE 50,697
+ISR_ERRCODE 51,713
+ISR_ERRCODE 52,730
+ISR_ERRCODE 53,747
+ISR_ERRCODE 54,764
+ISR_ERRCODE 55,781
+ISR_NOERRCODE 56,798
+ISR_NOERRCODE 57,815
+ISR_NOERRCODE 58,832
+ISR_NOERRCODE 59,849
+ISR_NOERRCODE 60,866
+ISR_NOERRCODE 61,883
+ISR_NOERRCODE 62,900
+ISR_NOERRCODE 63,917
+ISR_NOERRCODE 64,934
+ISR_NOERRCODE 65,951
+ISR_NOERRCODE 66,968
+ISR_NOERRCODE 67,985
+ISR_NOERRCODE 68,1002
+ISR_NOERRCODE 69,1019
+ISR_NOERRCODE 70,1036
+ISR_NOERRCODE 71,1053
+ISR_NOERRCODE 72,1070
+extern 74,1088
+isr_common_stub:isr_common_stub76,1108
 
 include/system.h,78
 #define _SYSTEM_H2,18
@@ -218,22 +86,43 @@ include/system.h,78
 #define sti(5,93
 #define nop(6,148
 
+include/gdt.h,428
+#define _GDT_H2,15
+struct idt_entry 6,51
+  u16 base_lo;7,70
+  u16 sel;8,85
+  u8 always0;9,96
+  u8 flags;10,110
+  u16 base_hi;11,122
+struct gdt_entry 14,164
+  u16 limit_low;15,183
+  u16 base_low;16,200
+  u8 base_middle;17,216
+  u8 access;18,234
+  u8 granularity;19,247
+  u8 base_high;20,265
+struct gdt_ptr 23,308
+  u16 limit;24,325
+  u32 base;25,338
+struct idt_ptr 28,377
+  u16 limit;29,394
+  u32 base;30,407
+
 include/io.h,19
 #define _IO_H2,14
 
-include/types.h,409
+include/types.h,348
 #define _TYPES_H2,17
 #define NULL 5,48
-typedef unsigned char uint8;9,102
-typedef unsigned short uint16;10,131
-typedef unsigned int uint32;11,162
-typedef unsigned long long uint64;12,191
-typedef signed char sint8;15,246
-typedef signed short sint16;16,273
-typedef signed int sint32;17,302
-typedef signed long long sint64;18,329
-typedef unsigned char u_char;20,363
-typedef unsigned int size_t;21,393
+typedef unsigned char u8;9,102
+typedef unsigned short u16;10,128
+typedef unsigned int u32;11,156
+typedef unsigned long long u64;12,182
+typedef signed char s8;15,234
+typedef signed short s16;16,258
+typedef signed int s32;17,284
+typedef signed long long s64;18,308
+typedef unsigned int size_t;20,339
 
 include/string.h,23
 #define _STRING_H2,18
@@ -265,239 +154,79 @@ typedef void * va_list;6,57
 #define va_arg(10,154
 #define va_end(12,254
 
-include/screen.h,462
+include/screen.h,464
 #define _SCREEN_H2,18
 #define VGA_MEMORY 5,73
-#define SCREEN_LIMIT 8,151
-#define SCREEN_SIZE 9,180
-#define HEIGHT 12,256
-#define WIDTH 13,274
-enum color 21,532
-  black 22,545
-  blue,23,557
-  green,24,565
-  cyan,25,574
-  red,26,582
-  magenta,27,589
-  brown,28,600
-  light_grey,29,609
-  dark_grey,30,623
-  light_blue,31,636
-  light_gree,32,650
-  light_cyan,33,664
-  light_red,34,678
-  light_magenta,35,691
-  light_brown,36,708
-  white37,723
+#define SCREEN_LIMIT 8,150
+#define SCREEN_SIZE 10,217
+#define HEIGHT 13,301
+#define WIDTH 14,319
+enum color 22,577
+  black 23,590
+  blue,24,602
+  green,25,610
+  cyan,26,619
+  red,27,627
+  magenta,28,634
+  brown,29,645
+  light_grey,30,654
+  dark_grey,31,668
+  light_blue,32,681
+  light_green,33,695
+  light_cyan,34,710
+  light_red,35,724
+  light_magenta,36,737
+  light_brown,37,754
+  white38,769
 
-include/multiboot.h,980
+include/multiboot.h,893
 #define _MULTIBOOT_H2,21
 struct symbol_table 6,63
-  uint32 tabsize;7,85
-  uint32 strsize;8,103
-  uint32 addr;9,121
-  uint32 resered;10,136
-struct elf_section 13,158
-  uint32 num;14,180
-  uint32 size;15,194
-  uint32 addr;16,209
-  uint32 shndx;17,224
-struct multiboot_info 21,318
-  uint32 flags;23,379
-  uint32 mem_lower;25,430
-  uint32 mem_upper;26,450
-  uint32 boot_device;28,495
-  uint32 cmdline;30,545
-  uint32 mods_count;32,588
-  uint32 mods_addr;33,609
-    struct symbol_table aout_sym;35,639
-    struct elf_section elf_sec;36,673
-  }u;u37,705
-  uint32 mmap_length;39,741
-  uint32 mmap_addr;40,763
-  uint32 drives_length;42,809
-  uint32 drives_addr;43,833
-  uint32 config_table;45,880
-  uint32 boot_loader_name;47,928
-  uint32 apm_table;49,973
-  uint32 vbe_control_info;51,1007
-  uint32 vbe_mode_info;52,1034
-  uint32 vbe_mode;53,1058
-  uint32 vbe_interface_seg;54,1077
-  uint32 vbe_interface_off;55,1105
-  uint32 vbe_interface_len;56,1133
+  u32 tabsize;7,85
+  u32 strsize;8,100
+  u32 addr;9,115
+  u32 resered;10,127
+struct elf_section 13,146
+  u32 num;14,168
+  u32 size;15,179
+  u32 addr;16,191
+  u32 shndx;17,203
+struct multiboot_info 21,294
+  u32 flags;23,355
+  u32 mem_lower;25,403
+  u32 mem_upper;26,420
+  u32 boot_device;28,462
+  u32 cmdline;30,509
+  u32 mods_count;32,549
+  u32 mods_addr;33,567
+    struct symbol_table aout_sym;35,594
+    struct elf_section elf_sec;36,628
+  }u;u37,660
+  u32 mmap_length;39,696
+  u32 mmap_addr;40,715
+  u32 drives_length;42,758
+  u32 drives_addr;43,779
+  u32 config_table;45,823
+  u32 boot_loader_name;47,868
+  u32 apm_table;49,910
+  u32 vbe_control_info;51,941
+  u32 vbe_mode_info;52,965
+  u32 vbe_mode;53,986
+  u32 vbe_interface_seg;54,1002
+  u32 vbe_interface_off;55,1027
+  u32 vbe_interface_len;56,1052
 
 vmemory.c,21
 void vmem_init(3,22
 
-.gitignore,0
-
-iso/makeiso.sh,0
-
-iso/grub.cfg,0
+gdt.c,259
+struct gdt_entry gdt_entries[gdt_entries7,86
+struct gdt_ptr gdt_ptr;8,119
+void add_gdt_entry(11,179
+void gdt_init(28,647
+struct idt_entry idt_entries[idt_entries42,1127
+struct idt_ptr idt_ptr;43,1162
+void add_idt_entry(47,1213
+void idt_init(61,1519
 
 stdarg.c,0
-
-.git/FETCH_HEAD,0
-
-.git/hooks/pre-commit.sample,0
-
-.git/hooks/pre-applypatch.sample,0
-
-.git/hooks/applypatch-msg.sample,0
-
-.git/hooks/post-update.sample,0
-
-.git/hooks/commit-msg.sample,0
-
-.git/refs/remotes/origin/master,0
-
-.git/refs/heads/master,0
-
-.git/info/exclude,0
-
-.git/logs/refs/remotes/origin/master,0
-
-.git/objects/dd/9d1968b6e4de0f03789de0f307d58751083649,0
-
-.git/objects/dd/0680a0fc7c398c2820d807f02e29f078a3b260,0
-
-.git/objects/69/b6622dbbeea7f197f5a545dfdf3a9c41c08835,0
-
-.git/objects/ed/5a030ece60453362ecd7255e8829a2515a9455,0
-
-.git/objects/79/a61a08afc26a6de764d12b74ebc9bf87ec544d,0
-
-.git/objects/9e/a000fe3faf4692a25dd597a2b49f882a734b16,0
-
-.git/objects/9e/a705e6d65cb171b48f525592493985e55e1984,0
-
-.git/objects/cc/063996c2a607b5e4d0b0a94eab8b32900aae1b,0
-
-.git/objects/16/a347f98a648d2a0a314a9cc17058e977f98e61,0
-
-.git/objects/4c/31111c2493397f8f8712aafa0bdc5a18e843b2,0
-
-.git/objects/dc/a5a55534a6693a937b331a73afe4bcc1581d9a,0
-
-.git/objects/a6/f3800ecbe2a3914b49d357cd142bc29e888a1c,0
-
-.git/objects/3d/14459cf97814c0ca60157225c952ea73e757ea,0
-
-.git/objects/33/f832c21db429bc8481ca3cd39be5d2a4d41df8,0
-
-.git/objects/6a/08cc75cb2b4578fcb183c7533c74d6661612a1,0
-
-.git/objects/46/dfbf2bf19ab51e82607650c1715f46b011b7fd,0
-
-.git/objects/7f/1754df494429907ebbd6a4c1312df83c402460,0
-
-.git/objects/56/24bbb3085c0e59280baedc34520fe5c26314a6,0
-
-.git/objects/59/bab001822aa7fbf6d81776ba950dc71953c0ab,0
-
-.git/objects/22/1aaf2b7c8b0e3e752ced405a55fd16bced8734,0
-
-.git/objects/22/6d1fabca7a232e58f998268f12a79c1c1c8e8d,0
-
-.git/objects/0e/81b2e5c3ecb9f6ad5fd6fbf6e34e04be3dc7b2,0
-
-.git/objects/50/2d91f3dfb01bb442b26d8cd687cb67fafe0332,0
-
-.git/objects/1f/2441b15d0e52d0743efcb4376539b9bda83ff4,0
-
-.git/objects/c9/aa0e3b6d02dd433f0549343be0e53286e2a7a2,0
-
-.git/objects/ef/0d62f80cf0d649958bf8cd1798d56618f77199,0
-
-.git/objects/da/028270e94d3e687441436f0b6cf3fdf0590382,0
-
-.git/objects/81/79baf98100ae1b1651ee78a5cd7038a9c2ba05,0
-
-.git/objects/f0/f0bfa263ece5ea580b5e130efa0fde3388834c,0
-
-.git/objects/57/35f094abd583f5a71b0b9de969dc1f35dc20d3,0
-
-.git/objects/ca/0da9583d158f7787d2be23e010d64c909c981e,0
-
-.git/objects/c1/ffafa34458453de613317c8f5c20680ebcb56e,0
-
-.git/objects/b3/1abc3bcc25c810d67499ea6763a907b3ad5bed,0
-
-.git/objects/d5/1a27c34c01b4fc9c64a6cbd08a9989c61c217b,0
-
-.git/objects/62/1d3b1cb51cc00d47fe2248ffd9698cc11b8894,0
-
-.git/objects/44/c69753401f6d946ee8e3833362aff61bf768a5,0
-
-.git/objects/44/a161642808fe14bfdb3c530e42937f3c882387,0
-
-.git/objects/5f/793217f21ef3f4410d046f9be221de030967dd,0
-
-.git/objects/eb/fde1a5bcde45ed0c7d43a60996705639cfad10,0
-
-.git/objects/35/afc66f3609904052e6022c60fe5db99863cbfa,0
-
-.git/objects/d8/c717743aa669644e3925717d105b243f9de897,0
-
-.git/objects/9b/f081c6d2186536beb3a13f9eb1d5ff7daa1e19,0
-
-.git/objects/c2/94502562a2d0323996c70b50e031f4b8f5b029,0
-
-.git/objects/7e/4f5e8a670b93ca3438ccfcf73ec36fbfc32b1b,0
-
-.git/objects/1c/dd606d742772e10e0ba9be3c4b8a5ccebfeb21,0
-
-.git/objects/1c/3e1fa48d38ce02d0018b6e72df2473ffd27ebb,0
-
-.git/objects/01/8dac33a48761a6cade06468b8eac5ac3142bee,0
-
-.git/objects/3f/0f9e51f3daa79816c1a56bb9c8d03dc40e0f50,0
-
-.git/objects/91/b7b5f9e25f12d835d62b511eb6612df766632d,0
-
-.git/objects/51/ca32d8addc594a4abd45d069e544dfa8908879,0
-
-.git/objects/90/e0deb28ee9e12f7a30486e53caed7370c95fc6,0
-
-.git/objects/2b/0b13ff4f2a8136b08fe16d95a5bed5f4ae00f2,0
-
-.git/objects/f7/65d62dffdd92b4e6eaaf7751510edae8d6c7d4,0
-
-.git/objects/13/9a07fcfbf4f309298438898ea99950d6274e6e,0
-
-.git/objects/e5/6149d55dd90c9b006531fc6b6884beecb1dd4c,0
-
-.git/objects/0c/ea6535d4cdea1cfca7a322dd8167edb3f6f759,0
-
-.git/objects/0c/d1d84f8cd348db632122f13458a26fdbc1c3c4,0
-
-.git/objects/3c/b7b7be2adb05dc2b89ed20580fa41b89487ea5,0
-
-.git/objects/75/4d52daa4e8fa49b9d21240bb0ae8d0c8f8493f,0
-
-.git/objects/5b/6f38afcd3da8840d33c9254b4d10943ac6908b,0
-
-.git/objects/f4/6ead2f52634261598581995d16d548adc66f6f,0
-
-.git/objects/e9/911336977009647f7a4a473e029ad6d1407ddb,0
-
-.git/objects/38/ade6d9f5051a040c7284ae42f220076018bb3b,0
-
-.git/objects/39/09aaaab764c9df481add1b060dd29b33633e1c,0
-
-.git/objects/4a/19f6dc7d6c36c1df67109c018eb6033dee98bb,0
-
-.git/objects/67/28354e7cd9155636c196f97a168ae061157670,0
-
-.git/objects/31/a8dcaef37a709b076cbaf9a7f8e4701aec204b,0
-
-.git/COMMIT_EDITMSG,0
-
-.git/HEAD,0
-
-.git/ORIG_HEAD,0
-
-.git/gitk.cache,0
-
-.gitignore~,0

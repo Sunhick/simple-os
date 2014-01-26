@@ -4,10 +4,10 @@
 /* video is memory mapped to ram */
 #define VGA_MEMORY 0xB8000
 
-/* Screen end = ram memory + (height * width * 2) */
-#define SCREEN_LIMIT 0xB8FA0
+/* Screen end = ram memory + (height * width) */
+#define SCREEN_LIMIT 0xB7D0
 /* Screen size = height * width * 2 */
-#define SCREEN_SIZE 0xFA0
+#define SCREEN_SIZE WIDTH*HEIGHT*2
 
 /* width and height of the screen 80x25 wide */
 #define HEIGHT 25
@@ -30,7 +30,7 @@ enum color {
   light_grey,
   dark_grey,
   light_blue,
-  light_gree,
+  light_green,
   light_cyan,
   light_red,
   light_magenta,

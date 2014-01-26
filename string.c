@@ -16,7 +16,7 @@ unsigned char *memset(unsigned char* dest,
 		      unsigned char val,
 		      int count)
 {
-  char *p = dest;
+  unsigned char *p = dest;
   while(count--) *dest++ = val;
   return p;
 }

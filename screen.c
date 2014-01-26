@@ -5,57 +5,59 @@
 #include <stdarg.h>
 
 /* get access to vga location */
-unsigned char *video = (unsigned char *)VGA_MEMORY;
-int x = 0, y = 0; 		/* cursor location */
-int attributes = 0x07;
+unsigned short *video = (unsigned short *)VGA_MEMORY;
+unsigned char x = 0, y = 0; 		/* cursor location */
+unsigned char attributes = (black < 4) | (light_blue & 0x0F);
 
 void console_init(void)
 {
-  memset(video, 0, SCREEN_LIMIT);
+  //  attributes = (black < 4) | (light_blue & 0x0F); /* Green text on black background */
+  unsigned short blank = 0x20 | (attributes << 8);
+
+  //memset(video, blank , SCREEN_SIZE);
+  int i = 0;
+  for(i = 0; i < SCREEN_SIZE; i++)    *video = blank;
+  
   x = 0; y = 0; 		/* reset cursor to (0,0) */
+  move_cursor();
 }
 
 void move_cursor(void)
 {
-  unsigned long pos = (y * WIDTH + x) << 1;
+  unsigned short pos = (y * WIDTH + x);
 
-  cli();
+  // cli();
   /* send command to the control indicating we will be
      sending the high nibble first*/
   outb(0x3d4, 14);
-  outb(0x3d5, (pos >> 9) & 0xff);
+  outb(0x3d5, pos >> 8);
   /* send the lower nibble */
   outb(0x3d4, 15);
-  outb(0x3d5, (pos >> 1) & 0xff);
-  sti();
+  outb(0x3d5, pos);
+  //sti();
 }
 
 /* Scroll up the contents by n lines */
-/* Fix: Scroll isn't working correctly*/
 void scroll_up(unsigned int lines)
 {
-  /* move contents at offset to the origin of the screen */
-  unsigned char *v, *offset;
-  for(v = video; v < (unsigned char *)SCREEN_LIMIT; v += 2) {
-    offset =  (unsigned char *)(v  + lines + (WIDTH << 1));
+  unsigned short blank = 0x20 | attributes << 8;
 
-    if(offset < (unsigned char *)SCREEN_LIMIT)  {
-      *v = *offset;
-      *(v + 1) = *(offset + 1);
-    } else {
-      *offset = 0;
-      *(offset + 1) = attributes;
-    }
+  //were at the last line, move up the content by one line
+  if(y >= 25) {
+    int i = 0;
+    //copy the content of 'i'th line to 'i-1'th line
+    for(i = 0*80; i < 24*80; i++) *(video + i) = *(video + i + 80);
+
+    //clear the last line
+    for(i = 24*80; i < 25*80; i++) *(video + i) = blank;
+    y = 24;
   }
-  
-  y -= lines;
-  if(y < 0) y = 0;
 }
 
 void putchar(char c)
 {
   /* each character takes 2 bytes(16bits) */
-  unsigned char *v = (unsigned char *)(video + ((y * WIDTH + x) << 1));
+  unsigned short *v = video + (y * WIDTH + x);
   
   /* handle the special chars like \n, \b , \t etc... */
   if(c == '\n') {
@@ -65,9 +67,9 @@ void putchar(char c)
     x += 8;			/* move by 8 chars */
   } else {
     /* write the character to the vga memory buffer */
-    *v = c;
+    *v = c | (attributes << 8);
     /* forecolor and backcolor to the immediate next byte */
-    *(v+1) = attributes;
+    /* *(v+1) = attributes; */
 
     if(x >= WIDTH) {		/* end of line */
       x = 0;
@@ -78,6 +80,7 @@ void putchar(char c)
   }
 
   if(y >= HEIGHT)  scroll_up(y - HEIGHT);
+
   move_cursor();
 }
 
