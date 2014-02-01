@@ -1,24 +1,25 @@
 
-kmain.c,74
+kmain.c,98
 void start_terminal(16,333
 void keyboard_init(21,388
-void kmain(27,455
+void timer_init(26,436
+void kmain(32,519
 
 boot.asm,131
 start:start10,199
 mboot:mboot28,992
 post_header:post_header42,1183
-hangup:hangup46,1277
-system_stack:system_stack51,1403
+hangup:hangup47,1307
+system_stack:system_stack52,1433
 
-string.c,180
+string.c,171
 unsigned char *memcpy(memcpy4,76
-unsigned char *memset(memset15,406
-int strlen(24,562
-char *strncpy(strncpy33,666
-int strcmp(40,811
-void itoa(49,967
-void reverse(62,1240
+void *memset(memset15,400
+int strlen(24,544
+char *strncpy(strncpy33,648
+int strcmp(40,793
+void itoa(49,949
+void reverse(62,1222
 
 time.c,35
 struct time get_current_time(5,36
@@ -34,51 +35,77 @@ void putchar(57,1382
 void print(87,2009
 void printf(97,2191
 
-isr.c,23
-void isr_handler(4,78
+isr.c,138
+isr_t interrupt_handlers[interrupt_handlers5,54
+void register_interrupt_handler(7,86
+void isr_handler(13,244
+void irq_handler(18,339
 
 io.c,42
 unsigned char inb 4,40
 void outb(12,227
 
-gdt.asm,828
-flush_gdt:flush_gdt2,19
-flush:flush14,154
-flush_idt:flush_idt18,187
-ISR_NOERRCODE 41,553
-ISR_NOERRCODE 42,569
-ISR_NOERRCODE 43,585
-ISR_NOERRCODE 44,601
-ISR_NOERRCODE 45,617
-ISR_NOERRCODE 46,633
-ISR_NOERRCODE 47,649
-ISR_NOERRCODE 48,665
-ISR_ERRCODE 49,681
-ISR_NOERRCODE 50,697
-ISR_ERRCODE 51,713
-ISR_ERRCODE 52,730
-ISR_ERRCODE 53,747
-ISR_ERRCODE 54,764
-ISR_ERRCODE 55,781
-ISR_NOERRCODE 56,798
-ISR_NOERRCODE 57,815
-ISR_NOERRCODE 58,832
-ISR_NOERRCODE 59,849
-ISR_NOERRCODE 60,866
-ISR_NOERRCODE 61,883
-ISR_NOERRCODE 62,900
-ISR_NOERRCODE 63,917
-ISR_NOERRCODE 64,934
-ISR_NOERRCODE 65,951
-ISR_NOERRCODE 66,968
-ISR_NOERRCODE 67,985
-ISR_NOERRCODE 68,1002
-ISR_NOERRCODE 69,1019
-ISR_NOERRCODE 70,1036
-ISR_NOERRCODE 71,1053
-ISR_NOERRCODE 72,1070
-extern 74,1088
-isr_common_stub:isr_common_stub76,1108
+gdt.asm,1120
+flush_gdt:flush_gdt3,75
+flush:flush15,210
+flush_idt:flush_idt20,296
+ISR_NOERRCODE 44,717
+ISR_NOERRCODE 45,733
+ISR_NOERRCODE 46,749
+ISR_NOERRCODE 47,765
+ISR_NOERRCODE 48,781
+ISR_NOERRCODE 49,797
+ISR_NOERRCODE 50,813
+ISR_NOERRCODE 51,829
+ISR_ERRCODE 52,845
+ISR_NOERRCODE 53,861
+ISR_ERRCODE 54,877
+ISR_ERRCODE 55,894
+ISR_ERRCODE 56,911
+ISR_ERRCODE 57,928
+ISR_ERRCODE 58,945
+ISR_NOERRCODE 59,962
+ISR_NOERRCODE 60,979
+ISR_NOERRCODE 61,996
+ISR_NOERRCODE 62,1013
+ISR_NOERRCODE 63,1030
+ISR_NOERRCODE 64,1047
+ISR_NOERRCODE 65,1064
+ISR_NOERRCODE 66,1081
+ISR_NOERRCODE 67,1098
+ISR_NOERRCODE 68,1115
+ISR_NOERRCODE 69,1132
+ISR_NOERRCODE 70,1149
+ISR_NOERRCODE 71,1166
+ISR_NOERRCODE 72,1183
+ISR_NOERRCODE 73,1200
+ISR_NOERRCODE 74,1217
+ISR_NOERRCODE 75,1234
+extern 78,1320
+isr_common_stub:isr_common_stub79,1339
+IRQ 114,1847
+IRQ 115,1862
+IRQ 116,1877
+IRQ 117,1892
+IRQ 118,1907
+IRQ 119,1922
+IRQ 120,1937
+IRQ 121,1952
+IRQ 122,1967
+IRQ 123,1982
+IRQ 124,1997
+IRQ 125,2012
+IRQ 126,2027
+IRQ 127,2042
+IRQ 128,2057
+IRQ 129,2072
+extern 132,2154
+irq_common_stub:irq_common_stub133,2173
+
+timer.c,68
+u32 tick 5,53
+void timer_callback(7,68
+void set_frequency(13,162
 
 include/system.h,78
 #define _SYSTEM_H2,18
@@ -154,6 +181,67 @@ typedef void * va_list;6,57
 #define va_arg(10,154
 #define va_end(12,254
 
+include/regs.h,795
+#define _REGS_H2,16
+typedef struct regs 4,33
+  unsigned int eax,5,55
+  unsigned int eax, ebx,5,55
+  unsigned int eax, ebx, ecx,5,55
+  unsigned int eax, ebx, ecx, edx,5,55
+  unsigned int eax, ebx, ecx, edx, ebi,5,55
+  unsigned int eax, ebx, ecx, edx, ebi, esi,5,55
+  unsigned int eax, ebx, ecx, edx, ebi, esi, edi,5,55
+  unsigned int eax, ebx, ecx, edx, ebi, esi, edi, esp;5,55
+  unsigned int int_no,6,110
+  unsigned int int_no, err_code;6,110
+  unsigned int cs,7,143
+  unsigned int cs, ds,7,143
+  unsigned int cs, ds, es,7,143
+  unsigned int cs, ds, es, ss,7,143
+  unsigned int cs, ds, es, ss, gs,7,143
+  unsigned int cs, ds, es, ss, gs, fs,7,143
+  unsigned int cs, ds, es, ss, gs, fs, eip,7,143
+  unsigned int cs, ds, es, ss, gs, fs, eip, eflags;7,143
+}regs_t;regs_t8,195
+
+include/isr.h,980
+#define _ISR_H2,15
+#define IRQ0 6,51
+#define IRQ1 7,67
+#define IRQ2 8,83
+#define IRQ3 9,99
+#define IRQ4 10,115
+#define IRQ5 11,131
+#define IRQ6 12,147
+#define IRQ7 13,163
+#define IRQ8 14,179
+#define IRQ9 15,195
+#define IRQ10 16,211
+#define IRQ11 17,228
+#define IRQ12 18,245
+#define IRQ13 19,262
+#define IRQ14 20,279
+#define IRQ15 21,296
+typedef struct registers23,314
+    u32 ds;25,341
+    u32 edi,26,395
+    u32 edi, esi,26,395
+    u32 edi, esi, ebp,26,395
+    u32 edi, esi, ebp, esp,26,395
+    u32 edi, esi, ebp, esp, ebx,26,395
+    u32 edi, esi, ebp, esp, ebx, edx,26,395
+    u32 edi, esi, ebp, esp, ebx, edx, ecx,26,395
+    u32 edi, esi, ebp, esp, ebx, edx, ecx, eax;26,395
+    u32 int_no,27,463
+    u32 int_no, err_code;27,463
+    u32 eip,28,543
+    u32 eip, cs,28,543
+    u32 eip, cs, eflags,28,543
+    u32 eip, cs, eflags, useresp,28,543
+    u32 eip, cs, eflags, useresp, ss;28,543
+} registers_t;29,623
+typedef void (*isr_t)isr_t31,639
+
 include/screen.h,464
 #define _SCREEN_H2,18
 #define VGA_MEMORY 5,73
@@ -216,17 +304,24 @@ struct multiboot_info 21,294
   u32 vbe_interface_off;55,1027
   u32 vbe_interface_len;56,1052
 
+keyboard.c,98
+unsigned char keyboard[keyboard5,54
+void keyboard_handler(16,491
+void install_keyboard(30,749
+
 vmemory.c,21
 void vmem_init(3,22
 
-gdt.c,259
-struct gdt_entry gdt_entries[gdt_entries7,86
-struct gdt_ptr gdt_ptr;8,119
-void add_gdt_entry(11,179
-void gdt_init(28,647
-struct idt_entry idt_entries[idt_entries42,1127
-struct idt_ptr idt_ptr;43,1162
-void add_idt_entry(47,1213
-void idt_init(61,1519
+gdt.c,307
+struct gdt_entry gdt_entries[gdt_entries8,103
+struct gdt_ptr gdt_ptr;9,136
+void add_gdt_entry(14,232
+void gdt_init(31,700
+struct idt_entry idt_entries[idt_entries45,1180
+struct idt_ptr idt_ptr;46,1215
+void add_idt_entry(50,1266
+void irq_remap(64,1572
+void irq_init(79,1818
+void idt_init(84,1854
 
 stdarg.c,0

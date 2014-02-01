@@ -41,6 +41,7 @@ mboot:
 ;jump to kmain	
 post_header:
 	push ebx		;pointer to multiboot info structure
+	cli			;disable the interrupt
 	call kmain		;call kernel main
 	
 hangup:				;kmain should never return;

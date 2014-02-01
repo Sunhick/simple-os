@@ -13,10 +13,10 @@ LIBS= -lssp
 ODIR=obj
 LDIR=
 
-_DEPS=string.h system.h io.h screen.h vmemory.h stdarg.h time.h gdt.h
+_DEPS=string.h system.h io.h screen.h vmemory.h stdarg.h time.h gdt.h isr.h
 DEPS= $(patsubst %, $(IDIR)/%, $(_DEPS))
 
-_OBJ=string.o io.o kmain.o screen.o boot.o vmemory.o stdarg.o time.o gdt.o isr.o gdt_asm.o
+_OBJ=string.o io.o kmain.o screen.o boot.o vmemory.o stdarg.o time.o gdt.o isr.o gdt_asm.o timer.o keyboard.o
 OBJ=$(patsubst %, $(ODIR)/%, $(_OBJ))
 
 all: $(OBJ)

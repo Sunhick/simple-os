@@ -20,16 +20,22 @@ void start_terminal()
 
 void keyboard_init()
 {
-  
+  install_keyboard();
+}
+
+void timer_init()
+{
+  set_frequency(50);
 }
 
 /* kernel entry point for simpleOS */
 void kmain(struct multiboot_info *boot_info)
 {
-  console_init();
   gdt_init();
   idt_init();
-  keyboard_init();  
+
+  console_init();
+
   
   char *version = "0.1";
   print("Welcome to Simple OS!");
@@ -61,7 +67,10 @@ void kmain(struct multiboot_info *boot_info)
 
   start_terminal();
   //place your code for kernel startup here
+  keyboard_init();  
+  sti();
 
+  timer_init();
   //kernel main should never return
   while(1);
 }

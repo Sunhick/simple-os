@@ -2,7 +2,7 @@
 
 /*copy the specified bytes in count from src to dest*/
 unsigned char *memcpy(unsigned char* dest,	/* destination */
-		      const unsigned char* src, /* source  */
+		      unsigned char* src, /* source  */
 		      int count)		/* no. of bytes to be copied */
 {
   char *d = dest, *s = src;
@@ -12,13 +12,13 @@ unsigned char *memcpy(unsigned char* dest,	/* destination */
 }
 
 /*set the value specified in val to dest till count bytes long*/
-unsigned char *memset(unsigned char* dest,
-		      unsigned char val,
-		      int count)
+void *memset(void* dest,
+	     char val,
+	     int count)
 {
-  unsigned char *p = dest;
-  while(count--) *dest++ = val;
-  return p;
+  char *p = (char*)dest;
+  for(; count != 0; count--) *p++ = val;
+  return dest;
 }
 
 int strlen(const char* str)

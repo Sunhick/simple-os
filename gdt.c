@@ -1,11 +1,18 @@
 #include <gdt.h>
 #include <types.h>
 #include <string.h>
+#include <isr.h>
 
 extern void flush_gdt(u32);
 
 struct gdt_entry gdt_entries[5];
 struct gdt_ptr gdt_ptr;
+
+struct idt_entry idt_entries[256];
+struct idt_ptr idt_ptr;
+
+extern void flush_idt();
+extern isr_t interrupt_handlers[];
 
 /* add entry into the gdt table */
 void add_gdt_entry(int index,
@@ -39,11 +46,6 @@ void gdt_init()
   flush_gdt((u32)&gdt_ptr);
 }
 
-struct idt_entry idt_entries[256];
-struct idt_ptr idt_ptr;
-
-extern void flush_idt();
-
 void add_idt_entry(u8 index,
 		   u32 base,
 		   u16 sel,
@@ -58,11 +60,44 @@ void add_idt_entry(u8 index,
    idt_entries[index].flags   = flags /* | 0x60 */;
 }
 
+void irq_remap()
+{
+  // Remap the irq table.
+  outb(0x20, 0x11);
+  outb(0xA0, 0x11);
+  outb(0x21, 0x20);
+  outb(0xA1, 0x28);
+  outb(0x21, 0x04);
+  outb(0xA1, 0x02);
+  outb(0x21, 0x01);
+  outb(0xA1, 0x01);
+  outb(0x21, 0x0);
+  outb(0xA1, 0x0);
+}
+
+void irq_init()
+{
+  irq_remap();
+}
+
 void idt_init()
 {
   idt_ptr.limit = sizeof(struct idt_entry)*256 - 1;
   idt_ptr.base = (u32)&idt_entries;
 
+  //  irq_remap();
+  outb(0x20, 0x11);
+  outb(0xA0, 0x11);
+  outb(0x21, 0x20);
+  outb(0xA1, 0x28);
+  outb(0x21, 0x04);
+  outb(0xA1, 0x02);
+  outb(0x21, 0x01);
+  outb(0xA1, 0x01);
+  outb(0x21, 0x0);
+  outb(0xA1, 0x0);
+
+  memset(&interrupt_handlers, 0, sizeof(isr_t)*256);
   memset(&idt_entries, 0, sizeof(struct idt_entry)*256);
 
   add_idt_entry(0, (u32)isr0, 0x08, 0x8E);
@@ -97,6 +132,26 @@ void idt_init()
   add_idt_entry(29, (u32)isr29, 0x08, 0x8E);
   add_idt_entry(30, (u32)isr30, 0x08, 0x8E);
   add_idt_entry(31, (u32)isr31, 0x08, 0x8E);
-  
+
+  /* add irq interrupt routines for slave and master */
+  /* for master PIC */
+  add_idt_entry(32, (u32)irq0, 0x08, 0x8E);
+  add_idt_entry(33, (u32)irq1, 0x08, 0x8E);
+  add_idt_entry(34, (u32)irq2, 0x08, 0x8E);
+  add_idt_entry(35, (u32)irq3, 0x08, 0x8E);
+  add_idt_entry(36, (u32)irq4, 0x08, 0x8E);
+  add_idt_entry(37, (u32)irq5, 0x08, 0x8E);
+  add_idt_entry(38, (u32)irq6, 0x08, 0x8E);
+  add_idt_entry(39, (u32)irq7, 0x08, 0x8E);
+  /* for slave PIC */
+  add_idt_entry(40, (u32)irq8, 0x08, 0x8E);
+  add_idt_entry(41, (u32)irq9, 0x08, 0x8E);
+  add_idt_entry(42, (u32)irq10, 0x08, 0x8E);
+  add_idt_entry(43, (u32)irq11, 0x08, 0x8E);
+  add_idt_entry(44, (u32)irq12, 0x08, 0x8E);
+  add_idt_entry(45, (u32)irq13, 0x08, 0x8E);
+  add_idt_entry(46, (u32)irq14, 0x08, 0x8E);
+  add_idt_entry(47, (u32)irq15, 0x08, 0x8E);
+    
   flush_idt((u32)&idt_ptr);
 }
